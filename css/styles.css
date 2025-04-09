@@ -1,0 +1,218 @@
+:root {
+    --primary: #4285f4;
+    --primary-dark: #3367d6;
+    --secondary: #34a853;
+    --danger: #ea4335;
+    --danger-dark: #d33426;
+    --light: #f8f9fa;
+    --dark: #202124;
+    --gray: #5f6368;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", "Roboto", sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: var(--primary);
+    color: white;
+    padding: 15px 20px;
+}
+
+.card-header h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.card-header i {
+    margin-right: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button i {
+    margin-right: 8px;
+}
+
+button.primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+button.primary:hover {
+    background-color: var(--primary-dark);
+}
+
+button.danger {
+    background-color: var(--danger);
+    color: white;
+}
+
+button.danger:hover {
+    background-color: var(--danger-dark);
+}
+
+.data-container {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    padding: 15px;
+    min-height: 100px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background-color: var(--light);
+    font-weight: 600;
+    color: var(--gray);
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
+
+/* Agrega esto al final de tu archivo styles.css */
+
+.selected {
+    background-color: var(--primary) !important;
+    color: white;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #cccccc !important;
+}
+
+.diagnostico-card {
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    padding: 15px;
+    margin-top: 15px;
+    border-left: 4px solid var(--primary);
+}
+
+.diagnostico-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.swal2-select, .swal2-input, .swal2-textarea {
+    width: 100% !important;
+    margin: 8px 0 !important;
+}
+
+.swal2-select {
+    padding: 8px !important;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--gray);
+}
+
+/* Efectos de hover para las filas de la tabla */
+#pacientes-list tbody tr:hover, 
+#citas-list tbody tr:hover {
+    background-color: #f0f7ff;
+    cursor: pointer;
+}
+
+/* Animación para botones */
+button {
+    transition: all 0.3s ease;
+}
+
+button:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
