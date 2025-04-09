@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocTrackAI - Gestión Médica</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-heartbeat"></i> DocTrackAI</h1>
+        </header>
+
+        <!-- Gestión de Pacientes -->
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-user-injured"></i> Gestión de Pacientes</h2>
+            </div>
+            <div class="card-body">
+                <div class="button-group">
+                    <button id="refresh-pacientes"><i class="fas fa-sync-alt"></i> Actualizar</button>
+                    <button id="add-paciente" class="primary"><i class="fas fa-plus"></i> Agregar</button>
+                    <button id="edit-paciente"><i class="fas fa-edit"></i> Editar</button>
+                    <button id="delete-paciente" class="danger"><i class="fas fa-trash"></i> Eliminar</button>
+                </div>
+                <div id="pacientes-list" class="data-container">
+                    <p>Cargando pacientes...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gestión de Citas -->
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-calendar-check"></i> Gestión de Citas</h2>
+            </div>
+            <div class="card-body">
+                <div class="button-group">
+                    <button id="refresh-citas"><i class="fas fa-sync-alt"></i> Actualizar</button>
+                    <button id="add-cita" class="primary"><i class="fas fa-plus"></i> Agregar</button>
+                    <button id="delete-cita" class="danger"><i class="fas fa-trash"></i> Eliminar</button>
+                </div>
+                <div id="citas-list" class="data-container">
+                    <p>Cargando citas...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diagnóstico -->
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-stethoscope"></i> Diagnóstico</h2>
+            </div>
+            <div class="card-body">
+                <button id="predict-diagnostico"><i class="fas fa-diagnoses"></i> Predecir Diagnóstico</button>
+                <div id="diagnostico-result"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SweetAlert2 para mensajes emergentes -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- JavaScript de la aplicación -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
